@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# IGNORED FILES...
+\'backup incase re failed'\
+\backup_with_hangul\
+\png_graphs\
+\svg_graphs\
