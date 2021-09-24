@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # IGNORED FILES...
-backup incase re failed/
-backup_with_hangul/
-png_graphs/
-svg_graphs/
+/backup incase re failed/
+/backup_with_hangul/
+/png_graphs/
+/svg_graphs/
