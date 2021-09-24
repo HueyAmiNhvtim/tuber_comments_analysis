@@ -1,0 +1,28 @@
+1) TEST THE LOOKAHEAD REGEX FOR INITIAL CATEGORIZATION....
+    ~ regex testing go brrrrrr..... ~
+   THE PURPOSE OF THE LOOKAHEAD:
+        - TO FIND OUT COMMENTS WITH MIXED EMOTES. THOSE COMMENTS WILL BE SPLIT INTO TWO TYPES:
+            +) THOSE WITH EMOTES AT THE VERY START OF THE SENTENCE (TYPE 1)
+            +) THOSE WITH EMOTES MIXED IN AND/OR AT THE END OF THE SENTENCE.
+   THEREFORE, THE REGEX EXPRESSIONS HAS TO MATCH THOSE PATTERNS:
+        - FOR TYPE 1: LOOK AHEAD FOR ANY WORDS BEHIND THE EMOTES SPAM...
+        - FOR TYPE 2: LOOK AHEAD FOR ANY EMOTES SPAM PATTERN...
+        - UNIVERSAL: IT HAS TO MATCH NON LATIN CHARS TOO WHY?????????? (\w+ already works so yay)
+   RESULTS:
+        - A REGEX PATTERN FOR BOTH TYPES, YAY!: r"(?=(:_?\w+_?:))"
+        - THIS SHOULD WORK FOR NON LATIN CHARACTERS, THAT'S WHAT I HOPE.
+2) THE REGEX HERE WILL ALSO MATCH EMOTES SPAM AND COMMENTS WITH WORDS, EMOTES, AND EMOJIS IF WE ARE NOT CAREFUL,
+SO HERE IS THE CONDTIONAL FLOW...
+    for x in range(len(big_comments_list)):
+        if x matches the emotes_spam_regex:
+            emotes_spam_list.append(x)
+        elif x matches the emoji_spam_regex: # Thanks mgaitan for the unicode list!
+            emoji_spam_regex.append(x)
+        elif x matches the mixed_emotes_comment_regex:
+            comment_emotes.append(x)
+        else:
+            normal_comment_list.append(x)
+3) TEST TO SEE IF SPLIT LINES WORK WITH COMMENTS WITH EMOJI...
+   TRY TO SEPARATE THE EMOJI FROM THE COMMENTS
+   TRY TO SEPARATE THE EMOTES FROM THE COMMENTS (STATUS: DONE WITH REGEX FINDALL)
+   WE ALSO POSSIBLY HAVE COMMENTS ONLY WITH EMOTES AND EMOJIS...
